@@ -1,0 +1,39 @@
+{
+    "name": "webness-studio/mpl-oauth-php",
+    "description": "Az alábbi eszköz szándékosan kihagyja az authorizációs végpontot, így biztosítva gyakorlási lehetőséget a token lekérésére. /  This document omits authorization endpoint on purpose, to provide a chance to practice obtaining an access token.  Idézet innen: / Quote from: [RFC 6749 - The OAuth2.0 Authorization Framework - 2.3.1. Client Password](https://tools.ietf.org/html/rfc6749#section-2.3.1): * Az api kulcsok (key, secret) használata a request-body-ban **NEM ENGEDÉLYEZETT**.    / Including the client credentials in the request-body using the two parameters is **NOT ALLOWED**. * A `grant_type=client_credentials` paraméter csak a request body-ban megengedett, **NEM LEHET** a request URI-ban.    / The parameter `grant_type=client_credentials` can only be transmitted in the request-body and **MUST NOT** be included in the request URI.  Az API a következő URL-eken érhető el: / This API can be accessed at the following URLs:  Környezet / Environment | API URL ----------------|------------- Sandbox | `https://sandbox.api.posta.hu/oauth2`  Production | `https://core.api.posta.hu/oauth2`   Az API ezen az oldalon a Sandbox környezetben tesztelhető. / You can test the API on this page in the Sandbox environment.",
+    "keywords": [
+        "openapitools",
+        "openapi-generator",
+        "openapi",
+        "php",
+        "sdk",
+        "rest",
+        "api"
+    ],
+    "homepage": "https://openapi-generator.tech",
+    "license": "unlicense",
+    "authors": [
+        {
+            "name": "OpenAPI",
+            "homepage": "https://openapi-generator.tech"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.3",
+        "guzzlehttp/psr7": "^1.7 || ^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": { "WebnessStudio\\MPL\\OAuth\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "WebnessStudio\\MPL\\OAuth\\Test\\" : "test/" }
+    }
+}
